@@ -1,8 +1,9 @@
-function checkNumbOfStr(arg) {
+function checkNumbOrStr(arg) {
     if (typeof arg === 'number' && !isNaN(arg)) {
-        return 'It is number';
+        return 'number';
     } else if (typeof arg === 'string') {
-        return 'It is string';
+        return 'string';
     }
+    return undefined;
 }
-modul.exports = checkNumbOfStr;
+module.exports = checkNumbOrStr;
