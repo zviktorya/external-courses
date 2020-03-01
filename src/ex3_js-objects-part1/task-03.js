@@ -1,9 +1,11 @@
 function checkObjectProperty(string, obj) {
     for (let key in obj) {
-        if (key === string) {
-            return true;
+        if (obj.hasOwnProperty(key)) {
+            if (key === string) {
+                return true;
+            }
+            return false;
         }
-        return false;
     };
     return undefined;
 }
