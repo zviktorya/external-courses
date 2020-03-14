@@ -1,7 +1,5 @@
 function getCountElement(array) {
-    let sumEven = 0;
-    let sumZero = 0;
-    let sumOdd = 0;
+    let sumEven = 0, sumZero = 0, sumOdd = 0;
 
     for (let j = 0; j < array.length; j++) {
         if (typeof array[j] === 'number') {

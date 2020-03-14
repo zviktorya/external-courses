@@ -1,4 +1,4 @@
-function checkNumbOrStr(arg) {
+function checkType(arg) {
     if (typeof arg === 'number' && !isNaN(arg)) {
         return 'number';
     } else if (typeof arg === 'string') {
@@ -6,4 +6,4 @@ function checkNumbOrStr(arg) {
     }
     return undefined;
 }
-module.exports = checkNumbOrStr;
+module.exports = checkType;
