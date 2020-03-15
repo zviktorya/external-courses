@@ -1,6 +1,4 @@
-function getRandomIntegerInclusive() {
-    min = Math.ceil(0);
-    max = Math.floor(100);
+function getRandom() {
     return Math.floor(Math.random() * 101);
 }
-module.exports = getRandomIntegerInclusive;
+module.exports = getRandom;
