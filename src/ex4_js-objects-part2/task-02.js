@@ -1,4 +1,4 @@
 function createEmptyObject() {
-    return Object.setPrototypeOf({}, null)
+    return Object.create(null);
 }
 module.exports = createEmptyObject;

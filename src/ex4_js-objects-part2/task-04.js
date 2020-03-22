@@ -1,4 +1,4 @@
-function dupperCaseFirstSymbol(str) {
+function toUpperCaseFirstSymbol(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
-module.exports = dupperCaseFirstSymbol;
+module.exports = toUpperCaseFirstSymbol;
