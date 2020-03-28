@@ -1,0 +1,27 @@
+.backgroundImg {
+    font-family: 'Gabriola';
+    width: 700px;
+    background-image: url(./img/background1.jpg); background-size: 100%;  
+}
+.backgroundAquamarine { 
+    font-family: 'Times New Roman';
+    width: 700pt;  
+    background-color: aquamarine;    
+}
+.backgroundRGB {
+    font-family: Tahoma;
+    width: 70%;
+    background-color: rgb(0,255,0);
+}
+.bacgroundHex {
+    font-family: 'Spicy Rice', cursive;
+    background-color: #00FFFF;
+}
+.invisivleMarkers {
+    list-style-type: none;
+}
+li span {
+    color: blue;
+    text-decoration: underline;
+}
+
