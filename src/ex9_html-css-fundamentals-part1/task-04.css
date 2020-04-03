@@ -1,0 +1,52 @@
+div {
+    width: 300px;
+    height: 120px;
+}
+/*способ 1*/
+.boxShadow {
+    background: #60b88d;
+    box-shadow: 5px 5px 0 0 #90cdaf, 10px 10px 0 0 #bfe3d1;
+}
+/*способ 2*/
+.pseudoElements {
+    background: #60b88d;
+    position: relative;
+}
+.pseudoElements::before {
+    background: #90cdaf;
+    width: 300px;
+    height: 120px;
+    content: '';   
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+}
+.pseudoElements::after {
+    background: #bfe3d1;    
+    width: 300px;
+    height: 120px;
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: -2;
+}
+/*способ 3*/
+.bottomBlock {    
+    background: #bfe3d1;
+    position: relative;
+    margin: 10px;
+}
+.middleBlock {
+    background: #90cdaf;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+.topBlock {
+    background: #60b88d;
+    position: absolute;    
+    top: -5px;
+    left: -5px;
+}
