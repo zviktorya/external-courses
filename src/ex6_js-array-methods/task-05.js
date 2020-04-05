@@ -3,6 +3,7 @@ function map(array, callback) {
     array.forEach(function (item, i) {        
         newArray.push(callback(item, i, array));
     });
+    
     return newArray;
 }
 module.exports = map;
