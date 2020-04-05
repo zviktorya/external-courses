@@ -1,0 +1,31 @@
+body {
+    padding: 30px;
+}
+header {
+    background: lightblue;
+}
+section {
+    background: lightgreen;   
+}
+article {
+    background: white;
+    margin: 0 0 1rem 0;
+}
+aside {
+    background: pink;
+}
+header, article, section, .module {
+    padding: 1rem;
+}
+header { grid-area: header; }
+section { grid-area: section; }
+aside { grid-area: aside; }
+main {
+    display: grid;
+    grid-template-areas:
+    'header header header header'
+    'section section section aside';
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+
