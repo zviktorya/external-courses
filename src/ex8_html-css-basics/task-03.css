@@ -1,0 +1,30 @@
+.firstWay {
+    border: 3px solid olivedrab;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.secondWay {
+    border: 5px double purple;
+    padding: 10px;
+}
+
+.thirdWay {
+    border: 10px dashed orange;
+    padding: 10px;
+}
+
+.fourthWay {
+    outline: 8px solid #B24CAF;
+}
+
+.fifthWay {
+    width: 200px;
+    height: 50px;   
+    background: #fc0; 
+    outline: 2px solid #000; 
+    border: 3px solid #fff;
+    border-radius: 10px; 
+    padding: 10px;
+}
+

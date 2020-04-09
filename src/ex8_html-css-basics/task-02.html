@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Практическая работа 8 - HTML и CSS</title>       
+        <link rel="stylesheet" href="task-02.css">
+    </head>
+
+    <body>
+        <h1>HTML Basics</h1>
+        <h2>Lists</h2>
+        <h3>Orderred list</h3>
+        <ol>
+            <li>first item</li>             
+            <li>second item</li> 
+            <li>third item</li> 
+            <li>fourth item</li> 
+            <li>fifth item</li> 
+        </ol>
+        <h3>Unorderred list</h3>
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+        </ul>
+        <div>
+            <h3>Discription list</h3>
+                <ul class="invisivleMarkers">
+                    <li>Name
+                    <ul class="invisivleMarkers"> 
+                        <li>Godzilla</li>
+                    </ul>
+                    </li>
+                    <li>Born
+                    <ul class="invisivleMarkers">
+                        <li>1952</li>
+                    </ul>
+                    </li>
+                    <li>Birthplace
+                    <ul class="invisivleMarkers">
+                        <li>Japan</li>
+                    </ul>
+                    </li>
+                    <li>Color
+                    <ul class="invisivleMarkers">
+                        <li>Green</li>
+                    </ul>
+                    </li>
+                </ul>            
+            <h3>Nestred list</h3>
+            <ul>
+                <li>List item one</li>
+                <li>List item two with subitems
+                <ul>
+                    <li>Subitem 1
+                    <ul>
+                        <li>SubSubitem 1</li>
+                        <li>SubSubitem 2</li>
+                    </ul>
+                    </li>
+                    <li>Subitem 2</li>                    
+                </ul> 
+                </li>
+                <li>Final list item</li>                
+            </ul>
+        </div>
+        <h3>List with links</h3>
+        <ul>
+            <li><span>Home</span></li>
+            <li><span>News</span></li>
+            <li><span>Contact</span></li>
+            <li><span>About</span></li>
+        </ul>
+        <hr>
+        <h2>Paragraphs</h2>
+        <p>
+            HTML является аббревиатурой для Hyper Text Markup Language. Язык разметки HTML служит для описания веб-страниц.
+            Он представляет собой набор тегов для разметки, которые описывают контент документа.
+        <br>
+        <br>
+            HTML-документы, также называемые веб-страницами, содержат HTML-теги и обычный текст.
+            <br>
+            HTML - язык разметки, что означает, что он предназначен для описания структуры веб-страницы. 
+            <br>
+            Чтобы браузер знал, как ее отобразить.
+            <br>
+            При посещении веб-страницы браузер отрисовывает код HTML.
+        <hr>
+        <h2>Tables</h2>
+        <table>
+            <tr><th>First name</th><th>Last name</th></tr>
+            <tr><td>John</td><td>Doe</td></tr>
+            <tr><td>Jane</td><td>Doe</td></tr>
+        </table>
+        <hr>
+        <h2>Image</h2>
+        <img src="./img/cat.jpg" alt="Cat" >
+        <hr>
+        <h2>Pre tag</h2>
+        <pre>
+            if (time = 20) {
+                greeting = "Good day";
+            } else {
+                greeting = "Good evening";
+            }
+        </pre>
+    </body>
+</html>
