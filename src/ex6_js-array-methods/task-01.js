@@ -1,5 +1,5 @@
 function slice(array, begin, end) {
-    let newArray = [];
+    let result = [];
     let endIndex = end;
     let beginIndex = begin;
 
@@ -16,8 +16,8 @@ function slice(array, begin, end) {
         endIndex = array.length + end;
     }
     for (let i = beginIndex; i < endIndex; i++) {
-        newArray.push(array[i]);
+        result.push(array[i]);
     }
-    return newArray;
+    return result;
 }
 module.exports = slice;
