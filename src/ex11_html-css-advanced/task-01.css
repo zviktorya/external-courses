@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #c1feff;
+}
+
+.loader {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 10px solid rgba(255,255,255,.1); /*бортик прозрачного цвета*/
+    border-top: 10px solid #08e8de;
+    animation: animate 0.5s infinite linear;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-20%, 50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-20%, 50%) rotate(360deg);
+    }
+}
+
+.block {
+    border-top: 10px solid #7CFC00;
+    border-bottom: 10px solid #7CFC00;
+    height: 200px;
+    width: 200px;
+}
+.ball {
+    position: absolute;
+    left: 75px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid 	#FFD700;
+    background: #FFFF00;
+    border-radius: 100%;
+    animation: bounce 1s infinite linear;    
+}
+
+@keyframes bounce {
+    0% {
+        top: 10px;
+    }
+    25% {
+        top: 70px;
+    }
+    50% {
+        top: 158px;
+    }
+    75% {
+        top: 70px;
+    }
+    100% {
+        top: 10px;
+    }
+}
+
+.circle {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid 	#FFD700;
+    background: linear-gradient(45deg,	#FFD700,#00F260,#009fff,#ec2f4b);
+    background-size: 200% 200%;
+    border-radius: 100%;   
+   animation: gradient 15s infinite linear;    
+}
+
+@keyframes gradient {
+    0%, 10%,20%,30%,45% {
+        width: 200px;
+        height: 200px;
+    }
+    0% {
+        background-position: 0 50%;
+    }
+    5% {
+        background-position: 50% 25%; 
+    }
+    10% {
+        border-radius: 0%;
+        background-position: 0 50%;
+    }   
+    35% {
+        border-radius: 0%;
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        background-position: 0 50%;
+    }
+    40% {
+        border-radius: 0%;
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        background-position: 50% 25%;
+    }
+    45% {
+        border-radius: 0%;
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        background-position: 0 50%;
+    }
+    50% { 
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        background-position: 0 50%;
+        width: 150px;
+	    height: 100px;	   
+	    -o-transform: skew(20deg);
+    }
+    51% {
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        transform: rotate(0deg);
+        background-position: 0 50%;
+        width: 150px;
+	    height: 100px;	   
+	    -o-transform: skew(20deg);
+    }
+    70% {
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        transform: rotate(360deg);
+        background-position: 0 50%;
+        width: 150px;
+	    height: 100px;	   
+	    -o-transform: skew(20deg);
+    }
+    95% {
+        background: linear-gradient(45deg,#03001e,#7303c0,#ec38bc,#fdeff9);
+        background-position: 50% 25%;
+        width: 150px;
+	    height: 100px;	   
+	    -o-transform: skew(20deg);
+    }
+    100% {
+        background-position: 0 50%;
+        border-radius: 50%;
+    }
+}
