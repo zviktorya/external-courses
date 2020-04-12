@@ -1,0 +1,6 @@
+.circle {    
+    clip-path: circle(30% at 40% 40%);
+}
+.mask { 
+    -webkit-mask-image: url('https://itvdn.blob.core.windows.net/images/images-e1630173-e7cb-43b9-9e89-2c5ea2ed4046.png');
+}

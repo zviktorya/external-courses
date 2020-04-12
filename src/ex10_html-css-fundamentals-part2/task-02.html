@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Задание 2</title>       
+    <link rel="stylesheet" href="task-02.css">
+</head>
+
+<body>
+    <form method="POST" action="http://httpbin.org/post">
+        <fieldset class="personalData">
+            <legend>Personal data</legend>
+            <div>
+                <label for="surname">Surname</label>
+                <input id="surname" type="text">
+            </div>
+            <br>
+            <div>
+                <label for="firstName">First name</label>
+                <input id="firstName" type="text">
+            </div>
+            <br>
+            <div>
+                <label for="middleName">Middle name</label>
+                <input id="middleName" type="text">
+            </div>
+            <br>
+            <div>
+                <label>You are</label>
+                <input name="radio" type="radio">
+                <label>male</label>
+                <input name="radio" type="radio">
+                <label>female</label>
+            </div>
+            <br>
+            <div>
+                <label for="age">Age</label>
+                <input id="age" type="number" min="18" max="101">
+            </div>
+            <br>
+            <div>
+                <label>Country of Residence</label>
+                <select>
+                    <option label=" "></option>
+                    <option label="Russia"></option>
+                    <option label="USA"></option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label>City</label>
+                <input type="checkbox">
+                <label>Ryazan</label>
+                <input type="checkbox">
+                <label>Moscow</label>
+            </div>
+            <br>
+            <div>
+                <label>Photography</label>
+                <input type="file">               
+            </div>
+            <hr>
+            <div>
+                <label>Title</label>
+                <select>
+                    <optgroup label="Technologies">
+                        <option>Web Master</option>
+                        <option>Database Administrator</option>
+                        <option>Computer-aided design</option>
+                    </optgroup>
+                    <optgroup label="Finance">
+                        <option>Economic Planning</option>
+                        <option>Management accounting</option>
+                        <option>Budgeting and planning</option>
+                    </optgroup>
+                  </select>
+            </div>
+            <br>
+            <div>
+                <label>Salary</label>
+                <input type="range">
+            </div>
+            <br>
+            <div class="inputText">
+                <textarea class="inputText">Tell us about yourself...</textarea>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset  class="contactInformation">
+            <legend>Contact information</legend>
+            <div>
+                <label for="site">Site</label>
+                <input id="site" type="url">
+            </div>
+            <br>
+            <div>            
+                <label for="email">Email</label>
+                <input id="email" type="email">
+            </div>
+            <br>
+            <div>
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel">
+            </div>
+        </fieldset>
+        <br>
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" required>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Oтправить">
+            <input type="reset" value="Сбросить">
+        </div>
+    </form>
+</body>
+</html>

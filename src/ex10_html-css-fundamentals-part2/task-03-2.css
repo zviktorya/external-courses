@@ -1,0 +1,12 @@
+#bodyTable tr:nth-child(2n-1) {
+    background: #f2f6fa; 
+} 
+
+#bodyTable tr:nth-child(2n-1):hover {
+    background: #4285f4; 
+} 
+
+tr:hover {
+    background:  #4285f4; 
+    color: white; 
+}
