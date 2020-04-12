@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <form action="http://httpbin.org/post">
+    <form method="POST" action="http://httpbin.org/post">
         <fieldset class="personalData">
             <legend>Personal data</legend>
             <div>
@@ -27,9 +27,9 @@
             <br>
             <div>
                 <label>You are</label>
-                <input type="radio">
+                <input name="radio" type="radio">
                 <label>male</label>
-                <input type="radio">
+                <input name="radio" type="radio">
                 <label>female</label>
             </div>
             <br>
