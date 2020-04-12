@@ -8,10 +8,10 @@
     background:#e3eaf3;
     font-size: 10px;
 }
-.bodyTable {
+#bodyTable {
     font-size: 12px;
 }
-td, #column {
+td, th {
     padding: 5px 15px; 
     border: 1px solid white;     
 }
