@@ -21,14 +21,33 @@
     /*end header*/
 
     /*start navbar*/
-    .navbarMenu {
+    .menuContainer {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background: white;
+        z-index: 1;
     }
     .navbarToggler {
         display: block;
         margin: 0 20px;
         border: transparent;
         background: transparent;
+    }
+    .navbarMenu:hover .menuContainer {
+        display: flex;
+    }
+    .menuItem {
+        padding: 20px 0;
+    }
+    .menuItem a:hover:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 10px solid transparent;
+        border-left: 10px solid #1FAAE2;
     }
     /*end navbar*/
 
@@ -68,3 +87,9 @@
     }
     /*end Section*/
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+  }
+  .dropdown:hover .dropdown-content {display: flex;}
