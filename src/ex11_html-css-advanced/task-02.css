@@ -1,0 +1,73 @@
+section {
+    margin: 10%;
+}
+.button {
+    border: 1px solid #cacaca;
+    border-radius: 20px;
+    width: 170px;
+    height: 35px;
+    background: #f9f9f9;
+    color: #79808f;    
+}
+.field {
+    position: relative; 
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    border-bottom: 1px solid #BCBEC3;
+    color: #79808f;
+}
+label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .2s linear;
+    color: #BCBEC3;
+    font-size: 8px;
+}
+input {
+    border: none; 
+    padding: 15px 3px 0 3px;   
+}
+.title {
+    width: 337px;
+}
+.price {
+    width: 161px;
+}
+.specific {
+    border-left: 1px solid #BCBEC3; 
+    width: 164px;
+}
+.labelSpecific {
+    left: 180px;
+} 
+.noBorder {
+    border: none; 
+}
+.locationImg {
+    width: 8px;
+    height: 10px;
+    left: 10px;
+}
+.menuImg {
+    width: 10px;
+    height: 10px;
+    left: 10px;
+}
+
+input:invalid + label {
+    top: 10px;
+    opacity: 0;
+}
+input:valid + label {
+    opacity: 1;
+    top: 0;
+}
+input:focus {
+    outline: none;
+}
+input:focus + label {
+    color: blue;
+}
+
