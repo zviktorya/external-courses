@@ -43,5 +43,13 @@ function changeImage(image) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    changeImage(images[0]);
+    changeImage(images[0]);    
 });
+
+document.addEventListener('keydown',function(event){
+    if(event.keyCode===37) {
+        prev();
+    } else if (event.keyCode===39) {
+        next();
+    }
+})
