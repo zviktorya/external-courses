@@ -20,19 +20,17 @@
     height: 100%;
     color: black;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 45px;
     background: white;
     opacity: 0.3;
     border: none;
-}
-  
+}  
 .button:hover,
 .button:focus {
     opacity: 0.1;
     background: gray;
     color: white;    
 }
-
 .animate {  animation: my-animation 1s 1 linear;
 }
 @keyframes my-animation {

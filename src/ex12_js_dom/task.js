@@ -5,7 +5,7 @@ const images = [
 ];
 let currentId;
 
-function prev() {
+function back() {
     const index = images.findIndex(function (item) {
         return item.id === currentId;
     });
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('keydown',function(event){
     if(event.keyCode===37) {
-        prev();
+        back();
     } else if (event.keyCode===39) {
         next();
     }
