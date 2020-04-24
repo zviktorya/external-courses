@@ -1,0 +1,118 @@
+body {
+    margin: 0;   
+}
+header {
+    display: flex;     
+    align-items: center;   
+    height: 4rem;   
+    background: #0067a3;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+}
+.imgMenu {
+    display: flex;
+    justify-content: center;
+    width: 2.6rem;
+    height: 2.6rem;
+}
+.heading {
+    width:82% ;
+}
+h1 {   
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.75rem;   
+    color: #FFFFFF;
+}
+.buttonCreateNewList {  
+    display: flex;  
+    width: 13%;   
+    height: 2.5rem;    
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-family: Roboto;   
+    font-size: 1.3rem;     
+}
+.imgCreateNewList { 
+    display: flex;  
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0 0.9rem;
+}
+ .spanCreateNewList {
+    word-wrap: normal;
+}
+.avatar {   
+    display: flex;  
+    justify-content: center;
+    width: 10%;      
+}
+.borderAvatar {
+    border: 0.05rem solid black;
+    height: 3.3rem; 
+    width: 3.3rem;
+    border-radius: 50%;
+    background-color: #FFFFFF;   
+}
+.imgAvatar {
+    width: 2.7rem;
+    height: 2.7rem;  
+    padding: 0.3rem; 
+}
+.UserMenu {
+    display: flex;  
+    justify-content: center;
+    width: 5%;
+}  
+.buttonUserMenu {    
+    background: #0067a3;  
+    color: #FFFFFF;
+    border: 0; 
+    font-size: 1.4rem;
+} 
+.main {
+    display: flex;
+    height: 52.6rem;
+    background: #0079bf;
+}
+.footer {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    background: #0067a3;
+}
+.activeTasks {
+   display: flex;
+   width: 20%; 
+   justify-content: center;  
+}
+.spanN {
+    display: flex;
+   width: 5%; 
+   justify-content: flex-start;  
+}
+.finishTasks {
+    display: flex;
+   width: 50%; 
+   justify-content: flex-start; 
+}
+.kanbanBoardBy {
+    display: flex;
+    width: 30%; 
+    justify-content: center;  
+}
+.labelActiveTasks, .labelFinishTasks, .labelKanbanBoardBy, .comma {
+    font-family: Roboto;   
+    font-size: 1.4rem;    
+    color: #FFFFFF; 
+}
+.spanFooter {
+    font-family: Roboto;   
+    font-size: 1.4rem;    
+    color: #FFFFFF; 
+}
