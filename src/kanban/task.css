@@ -1,25 +1,29 @@
 body {
     margin: 0;   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 header {
     display: flex;     
     align-items: center;   
-    height: 4rem;   
     background: #0067a3;
 }
 .menu {
     display: flex;
     justify-content: center;
-    width: 10%;
+    flex-basis: 10%;
+}
+.buttonMenu {
+    background: transparent;
+    border: none;
 }
 .imgMenu {
-    display: flex;
-    justify-content: center;
     width: 2.6rem;
     height: 2.6rem;
 }
 .heading {
-    width:82% ;
+    flex-basis: 82%;
 }
 h1 {   
     font-family: Roboto;
@@ -30,81 +34,66 @@ h1 {
 }
 .buttonCreateNewList {  
     display: flex;  
-    width: 13%;   
+    flex-basis: 13%;   
     height: 2.5rem;    
     background: #FFFFFF;
     border-radius: 5px;
     font-family: Roboto;   
-    font-size: 1.3rem;     
+    font-size: 1.3rem;       
 }
 .imgCreateNewList { 
-    display: flex;  
-    justify-content: center;
     width: 1.5rem;
     height: 1.5rem;
     padding: 0 0.9rem;
 }
  .spanCreateNewList {
-    word-wrap: normal;
+    white-space: nowrap;
 }
 .avatar {   
     display: flex;  
     justify-content: center;
-    width: 10%;      
+    flex-basis: 10%;      
 }
 .borderAvatar {
     border: 0.05rem solid black;
-    height: 3.3rem; 
-    width: 3.3rem;
     border-radius: 50%;
-    background-color: #FFFFFF;   
+    background-color: #FFFFFF;  
+    margin: 0 0.5rem;    
 }
 .imgAvatar {
-    width: 2.7rem;
-    height: 2.7rem;  
-    padding: 0.3rem; 
+    width: 2.5rem;
+    height: 2.5rem;  
+    padding: 0.3rem 0 0; 
 }
-.UserMenu {
-    display: flex;  
-    justify-content: center;
-    width: 5%;
-}  
 .buttonUserMenu {    
+    display: flex;
+    align-items: center;
     background: #0067a3;  
     color: #FFFFFF;
     border: 0; 
     font-size: 1.4rem;
 } 
 .main {
+    flex: 1;
     display: flex;
-    height: 52.6rem;
     background: #0079bf;
 }
 .footer {
     display: flex;
-    height: 4rem;
+    min-height: 4rem;
     align-items: center;
     background: #0067a3;
+    padding: 0 4rem;
 }
 .activeTasks {
-   display: flex;
-   width: 20%; 
-   justify-content: center;  
-}
-.spanN {
-    display: flex;
-   width: 5%; 
-   justify-content: flex-start;  
+    flex-basis: 20%; 
 }
 .finishTasks {
-    display: flex;
-   width: 50%; 
-   justify-content: flex-start; 
+    flex-basis: 20%; 
 }
 .kanbanBoardBy {
-    display: flex;
-    width: 30%; 
-    justify-content: center;  
+    flex: 1;
+    text-align: end; 
 }
 .labelActiveTasks, .labelFinishTasks, .labelKanbanBoardBy, .comma {
     font-family: Roboto;   
@@ -115,4 +104,5 @@ h1 {
     font-family: Roboto;   
     font-size: 1.4rem;    
     color: #FFFFFF; 
+    white-space: nowrap;
 }
