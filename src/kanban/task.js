@@ -1,14 +1,27 @@
+const dropDownUserMenuElement = document.getElementById("dropDownUserMenu");
+const buttonDropDownElement = document.getElementById("buttonDropDown");
+
+buttonDropDownElement.addEventListener('click', toggleUserMenu);
+buttonDropDownElement.addEventListener('blur', closeUserMenu);
+
 function toggleUserMenu() {
-    const userMenu = document.getElementById("dropDownUserMenu");
-
-    if (userMenu.classList.contains('visible')) {
-        document.getElementById("dropDownUserMenu").classList.add("hidden");
-        document.getElementById("dropDownUserMenu").classList.remove("visible");
+    if (dropDownUserMenuElement.classList.contains('visible')) {
+        closeUserMenu();
     } else {
-        document.getElementById("dropDownUserMenu").classList.add("visible");
-        document.getElementById("dropDownUserMenu").classList.remove("hidden");
+        openUserMenu();
     }
-
-    document.getElementById("buttonDropDown").classList.toggle("arrowUp");
 }
 
+function openUserMenu() {
+    dropDownUserMenuElement.classList.add("visible");
+    dropDownUserMenuElement.classList.remove("hidden");
+
+    buttonDropDownElement.classList.add("arrowUp");
+}
+
+function closeUserMenu() {
+    dropDownUserMenuElement.classList.add("hidden");
+    dropDownUserMenuElement.classList.remove("visible");
+
+    buttonDropDownElement.classList.remove("arrowUp");
+}
