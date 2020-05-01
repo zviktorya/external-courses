@@ -22,14 +22,20 @@
                 <button class="buttonCreateNewList">
                     <img class="imgCreateNewList" src="./imgKanban/plus.svg" alt="Create list">
                     <span class="spanCreateNewList">Create new list</span>
-                </button>                           
+                </button>  
+                <div class="separator"></div>                         
                 <div class="avatar">
-                    <button class="buttonUserMenu">
-                    <img class="imgAvatar borderAvatar" src="./imgKanban/avatar.svg" alt="avatar">                    
-                    &or;
-                </button>
-                </div>  
-            </div>         
+                    <button id="buttonDropDown" class="buttonUserMenu arrowDown" onclick="toggleUserMenu()" onblur="toggleUserMenu()">
+                        <img class="imgAvatar borderAvatar" src="./imgKanban/avatar.svg" alt="avatar">              
+                    </button> 
+                    <nav id="dropDownUserMenu" class="hidden dropDownContent">
+                        <ul>
+                            <li>My account</li>
+                            <li>Log out</li>                        
+                        </ul>
+                    </nav>   
+                </div> 
+            </div>   
         </header>
 
         <main class="main">
@@ -52,6 +58,7 @@
                 <label class="comma">,</label>
                 <span class="spanFooter">&ensp; &lt; NAME &gt;</span>                
             </div>
-        </footer>   
-    </body>
+        </footer>  
+        <script src="task.js"></script> 
+    </body>    
 </html>

@@ -9,9 +9,15 @@ header {
     justify-content: space-between;
     background: #0067a3;
 }
-.leftBlock, .rightBlock {
+.leftBlock {
     display: flex;
     align-items: center;
+}
+.rightBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 0.1;
 }
 .menu {   
     padding: 0 3rem; 
@@ -33,7 +39,7 @@ h1 {
 }
 .buttonCreateNewList {  
     display: flex;    
-    height: 2.5rem;    
+    min-height: 2.5rem;    
     background: #FFFFFF;
     border-radius: 5px;
     font-family: Roboto;   
@@ -44,11 +50,8 @@ h1 {
     height: 1.5rem;
     padding: 0 0.9rem;
 }
- .spanCreateNewList {
-    white-space: nowrap;
-}
 .avatar {       
-    padding-left: 3rem;
+    height: 100%;
 }
 .borderAvatar {
     border: 0.05rem solid black;
@@ -68,6 +71,7 @@ h1 {
     color: #FFFFFF;
     border: 0; 
     font-size: 1.4rem;    
+    height: 100%;
 } 
 .main {
     flex: 1;
@@ -101,4 +105,45 @@ h1 {
     font-size: 1.4rem;    
     color: #FFFFFF; 
     white-space: nowrap;
+}
+.imgMenu:hover, .buttonCreateNewList:hover, .buttonUserMenu:hover  {
+    color: #0067a3;    
+    opacity: 0.3;  
+    cursor: pointer;  
+}
+#dropDownUserMenu {
+    position: absolute;
+    right: 0;
+}
+.visible {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+.arrowDown::after {
+    content: "\2228";
+    color:  #FFFFFF;
+}
+.arrowUp::after {
+    content: "\2227";
+    color:  #FFFFFF;
+}
+.dropDownContent {          
+    border: 1px solid #f3f3f3;
+    background-color: #FFFFFF;
+} 
+li {
+    list-style-type: none;
+    padding: 0.5rem 1.5rem;
+    font-family: Roboto; 
+}
+li:hover {
+    background: #0067a3;
+    opacity: 0.7;
+    cursor: pointer;  
+}
+ul {
+    padding:  0;
+    margin: 0;
 }
