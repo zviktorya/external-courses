@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <title>Kanban</title>
-        <link rel="stylesheet" href="task.css">  
-    </head>
 
-    <body>
-        <header>
-            <div class="leftBlock">
-                <div class="menu">
-                    <button class="buttonMenu">
-                        <img class="imgMenu hoverAction" src="./imgKanban/menuGamb.png" alt="menu">
-                    </button>
-                </div>
-                <div class="heading">
-                    <h1>Awesome Kanban Board</h1>
-                </div>
-            </div>
-            <div class="rightBlock">
-                <button class="buttonCreateNewList hoverAction">
-                    <img class="imgCreateNewList" src="./imgKanban/plus.svg" alt="Create list">
-                    <span class="spanCreateNewList">Create new list</span>
-                </button>  
-                <div class="separator"></div>                         
-                <div class="avatar">
-                    <button id="buttonDropDown" class="buttonUserMenu hoverAction arrowDown">
-                        <img class="imgAvatar borderAvatar" src="./imgKanban/avatar.svg" alt="avatar">              
-                    </button> 
-                    <nav id="dropDownUserMenu" class="hidden dropDownContent">
-                        <ul>
-                            <li>My account</li>
-                            <li>Log out</li>                        
-                        </ul>
-                    </nav>   
-                </div> 
-            </div>   
-        </header>
+<head>
+    <meta charset="utf-8">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="task.css">
+</head>
 
-        <main class="main"></main>
-      
-        <footer class="footer">
-            <div class="activeTasks"> 
-                <label class="labelActiveTasks">Active tasks:</label>
-                <span class="spanFooter">&ensp; &lt; N &gt;</span>
-            </div>            
-            <div class="finishTasks">
-                <label class="labelFinishTasks">Finished tasks:</label>
-                <span class="spanFooter">&ensp; &lt; M &gt;</span>
+<body>
+    <header>
+        <div class="leftBlock">
+            <div class="menu">
+                <button class="buttonMenu">
+                    <img class="imgMenu hoverAction" src="./imgKanban/menuGamb.png" alt="menu">
+                </button>
             </div>
-            <div class="kanbanBoardBy">
-                <label class="labelKanbanBoardBy">Kanban board by</label>
-                <span class="spanFooter">&ensp; &lt; NAME &gt;</span>
-                <label class="comma">,</label>
-                <span class="spanFooter">&ensp; &lt; NAME &gt;</span>                
+            <div class="heading">
+                <h1>Awesome Kanban Board</h1>
             </div>
-        </footer>  
-        <script src="task.js"></script> 
-    </body>    
+        </div>
+        <div class="rightBlock">
+            <button class="buttonCreateNewList hoverAction">
+                <img class="imgCreateNewList" src="./imgKanban/plus.svg" alt="Create list">
+                <span class="spanCreateNewList">Create new list</span>
+            </button>
+            <div class="separator"></div>
+            <div class="avatar">
+                <button id="buttonDropDown" class="buttonUserMenu hoverAction arrowDown">
+                    <img class="imgAvatar borderAvatar" src="./imgKanban/avatar.svg" alt="avatar">
+                </button>
+                <nav id="dropDownUserMenu" class="hidden dropDownContent">
+                    <ul>
+                        <li>My account</li>
+                        <li>Log out</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main"></main>
+
+    <footer class="footer">
+        <div class="activeTasks">
+            <label class="labelActiveTasks">Active tasks:</label>
+            <span class="spanFooter">&ensp; &lt; N &gt;</span>
+        </div>
+        <div class="finishTasks">
+            <label class="labelFinishTasks">Finished tasks:</label>
+            <span class="spanFooter">&ensp; &lt; M &gt;</span>
+        </div>
+        <div class="kanbanBoardBy">
+            <label class="labelKanbanBoardBy">Kanban board by</label>
+            <span class="spanFooter">&ensp; &lt; NAME &gt;</span>
+            <label class="comma">,</label>
+            <span class="spanFooter">&ensp; &lt; NAME &gt;</span>
+        </div>
+    </footer>
+    <script src="task.js"></script>
+</body>
+
 </html>

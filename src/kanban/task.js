@@ -29,21 +29,21 @@ function closeUserMenu() {
 /*Task list*/
 let dataMock = [
     {
-         id: 5000,
-         title: 'Backlog',
-         issues: [
-             {
-                 id: 1588614113700,
-                 name: 'Sprint bugfix'
-             },
-             {
-                 id: 1588614113701,
-                 name: 'Login page – performance issues'
-             }
-         ]
+        id: 5000,
+        title: 'Backlog',
+        issues: [
+            {
+                id: 1588614113700,
+                name: 'Sprint bugfix'
+            },
+            {
+                id: 1588614113701,
+                name: 'Login page – performance issues'
+            }
+        ]
     }, {
         id: 5001,
-        title: 'Ready', 
+        title: 'Ready',
         issues: [
             {
                 id: 1588614113702,
@@ -84,7 +84,7 @@ let dataMock = [
                 name: 'Auth bugfix'
             }
         ]
-   }, {
+    }, {
         id: 5502,
         title: 'Finished',
         issues: [
@@ -94,9 +94,9 @@ let dataMock = [
             }
         ]
     }
- ];
+];
 
- function renderTaskList(taskListMock) {
+function renderTaskList(taskListMock) {
     let taskList = '';
 
     taskListMock.forEach(list => {
@@ -119,27 +119,27 @@ let dataMock = [
         `;
     });
 
-    document.getElementsByClassName('main')[0].innerHTML = taskList;  
+    document.getElementsByClassName('main')[0].innerHTML = taskList;
     setVisibilityForAddCardButton();
- }
+}
 
- function setVisibilityForAddCardButton() {
-     for (let i = 1;i<dataMock.length ;i++) {
-        document.getElementById(`addCard${dataMock[i].id}`).disabled = dataMock[i-1].issues.length === 0;
-     }
- }
+function setVisibilityForAddCardButton() {
+    for (let i = 1; i < dataMock.length; i++) {
+        document.getElementById(`addCard${dataMock[i].id}`).disabled = dataMock[i - 1].issues.length === 0;
+    }
+}
 
- function renderTasks(issues) {
+function renderTasks(issues) {
     let issueList = '';
-    issues.forEach(function(issue) {
+    issues.forEach(function (issue) {
         issueList += `
             <li tabindex="0" class="task" id="${issue.id}" title="${issue.name}">${issue.name}</li>
         `;
     });
     return issueList;
- }
+}
 
- renderTaskList(dataMock);
+renderTaskList(dataMock);
 
 
 /*add card*/
@@ -151,7 +151,7 @@ function addCard(listId) {
         taskDropdown.innerHTML = getNewTask();
         document.getElementById('newTask').focus();
     } else {
-        taskDropdown.innerHTML = getTaskList(listIndex-1, listIndex);
+        taskDropdown.innerHTML = getTaskList(listIndex - 1, listIndex);
     }
 }
 
@@ -169,7 +169,7 @@ function addNewTaskToList(event) {
 }
 
 function getListIndex(listId) {
-    return dataMock.findIndex(function(list) {
+    return dataMock.findIndex(function (list) {
         return list.id === listId;
     })
 }
@@ -177,9 +177,9 @@ function getListIndex(listId) {
 function getTaskList(listIndexFrom, listIndexTo) {
     let taskListDropDown = '<ul onmouseleave="closeTaskListDropDown()">';
     const taskListIssues = dataMock[listIndexFrom].issues;
-    
+
     if (taskListIssues && taskListIssues.length > 0) {
-        taskListIssues.forEach(function(issue, index) {
+        taskListIssues.forEach(function (issue, index) {
             if (index === taskListIssues.length - 1) {
                 taskListDropDown += `<li tabindex="0" onfocusout="closeTaskListDropDown()" onclick="moveToList(${listIndexFrom}, ${listIndexTo}, ${issue.id})">${issue.name}</li>`;
             } else {
@@ -197,19 +197,19 @@ function getTaskList(listIndexFrom, listIndexTo) {
 function closeTaskListDropDown() {
     const taskDropdowns = document.getElementsByClassName('taskDropdown');
 
-    for(let i=0; i < taskDropdowns.length; i++) {
+    for (let i = 0; i < taskDropdowns.length; i++) {
         taskDropdowns[i].innerHTML = '';
     }
 }
 
 function moveToList(listFrom, listTo, taskId) {
-    const taskIndex = dataMock[listFrom].issues.findIndex(function(obj) {
-        return obj.id === taskId; 
+    const taskIndex = dataMock[listFrom].issues.findIndex(function (obj) {
+        return obj.id === taskId;
     });
     const task = dataMock[listFrom].issues[taskIndex];
     if (!task) return;
     dataMock[listTo].issues.push(task);
-    dataMock[listFrom].issues.splice(taskIndex,1)
+    dataMock[listFrom].issues.splice(taskIndex, 1)
 
     renderTaskList(dataMock);
 }
