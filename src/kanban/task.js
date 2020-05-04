@@ -27,69 +27,69 @@ function closeUserMenu() {
 }
 
 /*Task list*/
-const dataMock = [
+let dataMock = [
     {
-         id: 'list1',
+         id: 5000,
          title: 'Backlog',
          issues: [
              {
-                 id: 'task1',
+                 id: 1588614113700,
                  name: 'Sprint bugfix'
              },
              {
-                 id: 'task2',
+                 id: 1588614113701,
                  name: 'Login page – performance issues'
              }
          ]
     }, {
-        id: 'list2',
+        id: 5001,
         title: 'Ready', 
         issues: [
             {
-                id: 'task3',
+                id: 1588614113702,
                 name: 'Shop bug1'
             },
             {
-                id: 'task4',
+                id: 1588614113703,
                 name: 'Shop bug2'
             },
             {
-                id: 'task5',
+                id: 1588614113704,
                 name: 'Shop bug3'
             },
             {
-                id: 'task6',
+                id: 1588614113706,
                 name: 'Shop bug4'
             },
             {
-                id: 'task7',
+                id: 1588614113707,
                 name: 'Shop bug5'
             },
             {
-                id: 'task8',
+                id: 1588614113708,
                 name: 'Shop bug6'
             },
             {
-                id: 'task9',
+                id: 1588614113709,
                 name: 'Shop bug7'
             }
 
         ]
     }, {
-        id: 'list3',
+        id: 5500,
         title: 'In Progress',
         issues: [
             {
-                id: 'task10',
+                id: 1588614113710,
                 name: 'Auth bugfix'
             }
         ]
    }, {
-        id: 'list4',
+        id: 5502,
         title: 'Finished',
         issues: [
             {
-                id: 'task11',
+                id: 1588614113711,
                 name: 'Main page bugfix'
             }
         ]
@@ -112,23 +112,104 @@ const dataMock = [
                     ${renderTasks(list.issues)}
                 </ul>
                 <div class="taskListFooter">
-                    <button class="addCard hoverAction">+  Add card</button>
+                    <button id="addCard${list.id}" class="addCard hoverAction disabledAction" onclick="addCard(${list.id})" >+  Add card</button>
+                    <div class="taskDropdown" id="taskDropdown${list.id}"></div>
                 </div>
             </div>
         `;
     });
 
-    document.getElementsByClassName('main')[0].innerHTML = taskList;    
+    document.getElementsByClassName('main')[0].innerHTML = taskList;  
+    setVisibilityForAddCardButton();
+ }
+
+ function setVisibilityForAddCardButton() {
+     for (let i = 1;i<dataMock.length ;i++) {
+        document.getElementById(`addCard${dataMock[i].id}`).disabled = dataMock[i-1].issues.length === 0;
+     }
  }
 
  function renderTasks(issues) {
     let issueList = '';
     issues.forEach(function(issue) {
         issueList += `
-            <li class="task" id="${issue.id}">${issue.name}</li>
+            <li tabindex="0" class="task" id="${issue.id}" title="${issue.name}">${issue.name}</li>
         `;
     });
     return issueList;
  }
 
  renderTaskList(dataMock);
+
+
+/*add card*/
+function addCard(listId) {
+    const listIndex = getListIndex(listId);
+    const isBacklogList = listIndex === 0;
+    const taskDropdown = document.getElementById(`taskDropdown${listId}`);
+    if (isBacklogList) {
+        taskDropdown.innerHTML = getNewTask();
+        document.getElementById('newTask').focus();
+    } else {
+        taskDropdown.innerHTML = getTaskList(listIndex-1, listIndex);
+    }
+}
+
+function getNewTask() {
+    return `<input class="newTaskInput" onkeydown="addNewTaskToList(event)" onfocusout="closeTaskListDropDown()" onmouseleave="closeTaskListDropDown()" id="newTask"/>`;
+}
+
+function addNewTaskToList(event) {
+    if (event.keyCode !== 13) return;
+    dataMock[0].issues.push({
+        id: Date.now(),
+        name: document.getElementById('newTask').value
+    });
+    renderTaskList(dataMock);
+}
+
+function getListIndex(listId) {
+    return dataMock.findIndex(function(list) {
+        return list.id === listId;
+    })
+}
+
+function getTaskList(listIndexFrom, listIndexTo) {
+    let taskListDropDown = '<ul onmouseleave="closeTaskListDropDown()">';
+    const taskListIssues = dataMock[listIndexFrom].issues;
+    
+    if (taskListIssues && taskListIssues.length > 0) {
+        taskListIssues.forEach(function(issue, index) {
+            if (index === taskListIssues.length - 1) {
+                taskListDropDown += `<li tabindex="0" onfocusout="closeTaskListDropDown()" onclick="moveToList(${listIndexFrom}, ${listIndexTo}, ${issue.id})">${issue.name}</li>`;
+            } else {
+                taskListDropDown += `<li tabindex="0" onclick="moveToList(${listIndexFrom}, ${listIndexTo}, ${issue.id})">${issue.name}</li>`;
+            }
+        });
+    } else {
+        taskListDropDown += '<li onfocusout="closeTaskListDropDown()">There are not issues</li>';
+    }
+    taskListDropDown += '</ul>';
+
+    return taskListDropDown;
+}
+
+function closeTaskListDropDown() {
+    const taskDropdowns = document.getElementsByClassName('taskDropdown');
+
+    for(let i=0; i < taskDropdowns.length; i++) {
+        taskDropdowns[i].innerHTML = '';
+    }
+}
+
+function moveToList(listFrom, listTo, taskId) {
+    const taskIndex = dataMock[listFrom].issues.findIndex(function(obj) {
+        return obj.id === taskId; 
+    });
+    const task = dataMock[listFrom].issues[taskIndex];
+    if (!task) return;
+    dataMock[listTo].issues.push(task);
+    dataMock[listFrom].issues.splice(taskIndex,1)
+
+    renderTaskList(dataMock);
+}

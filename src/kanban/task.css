@@ -112,6 +112,10 @@ h1 {
     opacity: 0.3;  
     cursor: pointer; 
 }
+.disabledAction:disabled {
+    color: #5e6c84;
+    opacity: 0.3;
+}
 #dropDownUserMenu {
     position: absolute;
     right: 0;
@@ -178,14 +182,6 @@ ul {
     justify-content: space-between;
 }
 
-.taskListContent {
-
-}
-
-.taskListFooter {
-
-}
-
 h3 {
     font-family: Roboto;     
     font-weight: normal;
@@ -214,4 +210,20 @@ h3 {
     padding: 0.5rem 0.3rem;
     border-radius: 0.3rem;
     margin: 1rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+}
+
+.taskDropdown {
+    position: absolute;
+    background: white;
+}
+
+.newTaskInput {
+    background: #FFFFFF;
+    padding: 0.5rem 0.3rem;
+    border-radius: 0.3rem;
+    margin: 1rem;
+
 }
