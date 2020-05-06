@@ -96,10 +96,10 @@ let dataMock = [
     }
 ];
 
-function renderTaskList(taskListMock) {
+function renderTaskList(tasks) {
     let taskList = '';
 
-    taskListMock.forEach(list => {
+    tasks.forEach(list => {
         taskList += `
             <div class="taskList" id="${list.id}">
                 <div class="taskListHeader">
@@ -156,14 +156,29 @@ function addCard(listId) {
 }
 
 function getNewTask() {
-    return `<input class="newTaskInput" onkeydown="addNewTaskToList(event)" onfocusout="closeTaskListDropDown()" onmouseleave="closeTaskListDropDown()" id="newTask"/>`;
+    return `
+        <div onmouseleave="closeTaskListDropDown()">
+            <input class="newTaskInput"
+                onkeydown="addNewTaskToListByKeyboard(event)"
+                id="newTask"
+            />
+            <button onclick="addNewTaskToList()" onfocusout="closeTaskListDropDown()">Add</button>
+        </div>    
+    `;
 }
 
-function addNewTaskToList(event) {
+function addNewTaskToListByKeyboard(event) {
     if (event.keyCode !== 13) return;
+    addNewTaskToList();
+}
+
+function addNewTaskToList() {
+    const newTaskName = document.getElementById('newTask').value;
+    if (!newTaskName) return;
+
     dataMock[0].issues.push({
         id: Date.now(),
-        name: document.getElementById('newTask').value
+        name: newTaskName
     });
     renderTaskList(dataMock);
 }
