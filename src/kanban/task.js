@@ -175,7 +175,7 @@ function getListIndex(listId) {
 }
 
 function getTaskList(listIndexFrom, listIndexTo) {
-    let taskListDropDown = '<ul onmouseleave="closeTaskListDropDown()">';
+    let taskListDropDown = '<ul class="contextMenu" onmouseleave="closeTaskListDropDown()">';
     const taskListIssues = dataMock[listIndexFrom].issues;
 
     if (taskListIssues && taskListIssues.length > 0) {
