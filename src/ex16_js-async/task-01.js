@@ -1,10 +1,6 @@
 function fetch(url, options) {
     let resolve;
     let reject;
-    let promise = new Promise(function(res, rej) {
-        resolve = res;
-        reject = rej;
-    });
     let xhr = new XMLHttpRequest();
 
     if (options && options.method.toUpperCase() === 'POST') {
@@ -28,7 +24,10 @@ function fetch(url, options) {
         }
     };
 
-    return promise;
+    return new Promise(function(res, rej) {
+        resolve = res;
+        reject = rej;
+    });
 }
 
 module.exports = fetch;
