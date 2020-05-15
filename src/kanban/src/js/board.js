@@ -1,100 +1,11 @@
-const dropDownUserMenuElement = document.getElementById("dropDownUserMenu");
-const buttonDropDownElement = document.getElementById("buttonDropDown");
+import {defaultData} from './data.js';
 
-buttonDropDownElement.addEventListener('click', toggleUserMenu);
-buttonDropDownElement.addEventListener('blur', closeUserMenu);
-
-function toggleUserMenu() {
-    if (dropDownUserMenuElement.classList.contains('visible')) {
-        closeUserMenu();
-    } else {
-        openUserMenu();
-    }
+export {runBoard, addCard, addNewTaskToListByKeyboard, addNewTaskToList, closeTaskListDropDown, moveToList};
+function runBoard() {
+    renderTaskList(data);
 }
 
-function openUserMenu() {
-    dropDownUserMenuElement.classList.add("visible");
-    dropDownUserMenuElement.classList.remove("hidden");
-
-    buttonDropDownElement.classList.add("arrowUp");
-}
-
-function closeUserMenu() {
-    dropDownUserMenuElement.classList.add("hidden");
-    dropDownUserMenuElement.classList.remove("visible");
-
-    buttonDropDownElement.classList.remove("arrowUp");
-}
-
-/*Task list*/
-let dataMock = [
-    {
-        id: 5000,
-        title: 'Backlog',
-        issues: [
-            {
-                id: 1588614113700,
-                name: 'Sprint bugfix'
-            },
-            {
-                id: 1588614113701,
-                name: 'Login page – performance issues'
-            }
-        ]
-    }, {
-        id: 5001,
-        title: 'Ready',
-        issues: [
-            {
-                id: 1588614113702,
-                name: 'Shop bug1'
-            },
-            {
-                id: 1588614113703,
-                name: 'Shop bug2'
-            },
-            {
-                id: 1588614113704,
-                name: 'Shop bug3'
-            },
-            {
-                id: 1588614113706,
-                name: 'Shop bug4'
-            },
-            {
-                id: 1588614113707,
-                name: 'Shop bug5'
-            },
-            {
-                id: 1588614113708,
-                name: 'Shop bug6'
-            },
-            {
-                id: 1588614113709,
-                name: 'Shop bug7'
-            }
-
-        ]
-    }, {
-        id: 5500,
-        title: 'In Progress',
-        issues: [
-            {
-                id: 1588614113710,
-                name: 'Auth bugfix'
-            }
-        ]
-    }, {
-        id: 5502,
-        title: 'Finished',
-        issues: [
-            {
-                id: 1588614113711,
-                name: 'Main page bugfix'
-            }
-        ]
-    }
-];
+let data = JSON.parse(JSON.stringify(defaultData));
 
 function renderTaskList(tasks) {
     let taskList = '';
@@ -105,7 +16,7 @@ function renderTaskList(tasks) {
                 <div class="taskListHeader">
                     <h3>${list.title}</h3>
                     <button class="taskListMenuBtn hoverAction">
-                        <img class="taskListMenuImg" src="./imgKanban/dots.svg" alt="task list menu">
+                        <img class="taskListMenuImg" src="./src/img/dots.svg" alt="task list menu">
                     </button>
                 </div>
                 <ul class="taskListContent">
@@ -124,8 +35,8 @@ function renderTaskList(tasks) {
 }
 
 function setVisibilityForAddCardButton() {
-    for (let i = 1; i < dataMock.length; i++) {
-        document.getElementById(`addCard${dataMock[i].id}`).disabled = dataMock[i - 1].issues.length === 0;
+    for (let i = 1; i < data.length; i++) {
+        document.getElementById(`addCard${data[i].id}`).disabled = data[i - 1].issues.length === 0;
     }
 }
 
@@ -138,9 +49,6 @@ function renderTasks(issues) {
     });
     return issueList;
 }
-
-renderTaskList(dataMock);
-
 
 /*add card*/
 function addCard(listId) {
@@ -176,22 +84,22 @@ function addNewTaskToList() {
     const newTaskName = document.getElementById('newTask').value;
     if (!newTaskName) return;
 
-    dataMock[0].issues.push({
+    data[0].issues.push({
         id: Date.now(),
         name: newTaskName
     });
-    renderTaskList(dataMock);
+    renderTaskList(data);
 }
 
 function getListIndex(listId) {
-    return dataMock.findIndex(function (list) {
+    return data.findIndex(function (list) {
         return list.id === listId;
     })
 }
 
 function getTaskList(listIndexFrom, listIndexTo) {
     let taskListDropDown = '<ul class="contextMenu" onmouseleave="closeTaskListDropDown()">';
-    const taskListIssues = dataMock[listIndexFrom].issues;
+    const taskListIssues = data[listIndexFrom].issues;
 
     if (taskListIssues && taskListIssues.length > 0) {
         taskListIssues.forEach(function (issue, index) {
@@ -218,13 +126,13 @@ function closeTaskListDropDown() {
 }
 
 function moveToList(listFrom, listTo, taskId) {
-    const taskIndex = dataMock[listFrom].issues.findIndex(function (obj) {
+    const taskIndex = data[listFrom].issues.findIndex(function (obj) {
         return obj.id === taskId;
     });
-    const task = dataMock[listFrom].issues[taskIndex];
+    const task = data[listFrom].issues[taskIndex];
     if (!task) return;
-    dataMock[listTo].issues.push(task);
-    dataMock[listFrom].issues.splice(taskIndex, 1)
+    data[listTo].issues.push(task);
+    data[listFrom].issues.splice(taskIndex, 1)
 
-    renderTaskList(dataMock);
+    renderTaskList(data);
 }
